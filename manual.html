@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Author Visibility Playbook | Free Download | Sophie Ellis Clark</title>
+    <meta name="description" content="Download the free Author Visibility Playbook by Sophie Ellis Clark. A practical guide to getting your book discovered by the right readers.">
+    <meta property="og:title" content="The Author Visibility Playbook | Sophie Ellis Clark">
+    <meta property="og:description" content="A practical guide to getting your book discovered by the right readers. Free download.">
+    <meta property="og:type" content="website">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --navy: #1a2340;
+            --gold: #c9a96e;
+            --cream: #faf7f2;
+            --charcoal: #2d2d2d;
+            --white: #ffffff;
+            --border: #e8e3de;
+        }
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.7;
+        }
+        h1, h2, h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--navy);
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: #b8955a;
+        }
+        .nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo .name {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .nav-logo .subtitle {
+            font-size: 11px;
+            color: #777;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--charcoal);
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+        }
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--navy);
+            padding: 24px;
+            z-index: 999;
+            transform: translateY(-100%);
+            transition: transform 0.3s;
+        }
+        .mobile-nav.open {
+            transform: translateY(0);
+        }
+        .mobile-nav a {
+            color: var(--white);
+            display: block;
+            padding: 12px 0;
+            font-size: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .mobile-nav-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 28px;
+            cursor: pointer;
+            float: right;
+            margin-bottom: 16px;
+        }
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav-cta {
+                display: none;
+            }
+        }
+        .manual-hero {
+            background: var(--navy);
+            color: var(--white);
+            padding: 120px 24px 80px;
+            text-align: center;
+        }
+        .manual-hero .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .manual-hero h1 {
+            color: var(--white);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 16px;
+        }
+        .manual-hero .subtitle {
+            font-size: 18px;
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        .manual-hero .btn-primary {
+            font-size: 16px;
+            padding: 16px 40px;
+        }
+        .manual-chapters {
+            padding: 80px 24px;
+            background: var(--white);
+        }
+        .chapters-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .chapters-inner h2 {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .chapter-list {
+            list-style: none;
+            counter-reset: chapter;
+        }
+        .chapter-list li {
+            counter-increment: chapter;
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 24px 32px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .chapter-list li::before {
+            content: counter(chapter);
+            font-family: Georgia, serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--gold);
+            min-width: 50px;
+            text-align: center;
+        }
+        .chapter-list li .chapter-title {
+            font-family: Georgia, serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .chapter-list li .chapter-desc {
+            font-size: 13px;
+            color: #888;
+        }
+        .manual-preview {
+            padding: 80px 24px;
+            background: var(--cream);
+        }
+        .preview-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .preview-inner h2 {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .preview-item {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 32px;
+            border-top: 4px solid var(--gold);
+        }
+        .preview-item h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .preview-item p {
+            font-size: 14px;
+            color: #666;
+        }
+        @media (max-width: 700px) {
+            .preview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .manual-cta {
+            padding: 80px 24px;
+            background: var(--navy);
+            text-align: center;
+        }
+        .manual-cta h2 {
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+        .manual-cta p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .footer {
+            background: #111827;
+            color: rgba(255,255,255,0.6);
+            padding: 48px 24px 24px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 32px;
+        }
+        .footer h4 {
+            color: var(--white);
+            font-family: Georgia, serif;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        .footer a {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .footer a:hover {
+            color: var(--gold);
+        }
+        .footer .copyright {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+        @media (max-width: 700px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <span class="name">Sophie Ellis Clark</span>
+                <span class="subtitle">Book Discovery & Marketing</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html" class="nav-cta">Get a Free Review</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Open menu" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" onclick="toggleMobileMenu()" aria-label="Close menu">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="results.html">Results</a>
+        <a href="resources.html">Resources</a>
+        <a href="tools.html">Tools</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" style="color: #c9a96e; font-weight: 700;">Get a Free Book Visibility Review</a>
+    </div>
+
+    <section class="manual-hero">
+        <div class="manual-hero-inner">
+            <div class="label">Free Download</div>
+            <h1>THE AUTHOR VISIBILITY PLAYBOOK</h1>
+            <p class="subtitle">A practical guide to getting your book discovered by the right readers.</p>
+            <a href="assets/author-visibility-manual.pdf" class="btn-primary" download>Download the Free Author Visibility Playbook</a>
+            <p style="margin-top: 12px; font-size: 13px; color: rgba(255,255,255,0.5);">PDF file will be linked at this path. See note below.</p>
+        </div>
+    </section>
+
+    <section class="manual-chapters">
+        <div class="chapters-inner">
+            <h2>What's Inside</h2>
+            <ul class="chapter-list">
+                <li><span class="chapter-title">Why Great Books Stay Invisible</span><br><span class="chapter-desc">Understanding the discoverability problem</span></li>
+                <li><span class="chapter-title">Know Your Ideal Reader</span><br><span class="chapter-desc">Who are you really writing for?</span></li>
+                <li><span class="chapter-title">Build Your Book's Discovery Foundation</span><br><span class="chapter-desc">Positioning, metadata, and optimization</span></li>
+                <li><span class="chapter-title">Find Your Reader Communities</span><br><span class="chapter-desc">Where your readers gather online and offline</span></li>
+                <li><span class="chapter-title">The Author Outreach System</span><br><span class="chapter-desc">How to reach out with confidence</span></li>
+                <li><span class="chapter-title">Content That Makes Readers Curious</span><br><span class="chapter-desc">Creating content that converts attention into interest</span></li>
+                <li><span class="chapter-title">Your 30-Day Visibility Plan</span><br><span class="chapter-desc">A step-by-step action plan for the next month</span></li>
+                <li><span class="chapter-title">The Author Visibility Checklist</span><br><span class="chapter-desc">A final checklist to ensure you're on track</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="manual-preview">
+        <div class="preview-inner">
+            <h2>Preview the Manual</h2>
+            <div class="preview-grid">
+                <div class="preview-item">
+                    <h3>Chapter 1: Why Great Books Stay Invisible</h3>
+                    <p>An honest look at the publishing landscape and why even exceptional books can fail to find readers.</p>
+                </div>
+                <div class="preview-item">
+                    <h3>Chapter 2: Know Your Ideal Reader</h3>
+                    <p>Practical exercises to help you define who your book is truly for, and how to reach them.</p>
+                </div>
+                <div class="preview-item">
+                    <h3>Chapter 3: Build Your Book's Discovery Foundation</h3>
+                    <p>Everything you need to know about optimizing your book's metadata, categories, and positioning.</p>
+                </div>
+                <div class="preview-item">
+                    <h3>Chapter 4: Find Your Reader Communities</h3>
+                    <p>A guide to identifying and engaging with book clubs, online communities, and reader groups.</p>
+                </div>
+                <div class="preview-item">
+                    <h3>Chapter 5: The Author Outreach System</h3>
+                    <p>Templates and scripts for reaching out to bloggers, reviewers, and book influencers.</p>
+                </div>
+                <div class="preview-item">
+                    <h3>Chapter 6: Content That Makes Readers Curious</h3>
+                    <p>How to create social media content and videos that make people want to read your book.</p>
+                </div>
+                <div class="preview-item">
+                    <h3>Chapter 7: Your 30-Day Visibility Plan</h3>
+                    <p>A day-by-day action plan to build momentum for your book over the next month.</p>
+                </div>
+                <div class="preview-item">
+                    <h3>Chapter 8: The Author Visibility Checklist</h3>
+                    <p>A comprehensive final checklist to ensure you haven't missed any critical steps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="manual-cta">
+        <h2>Download the Full Manual</h2>
+        <p>Get the complete Author Visibility Playbook with worksheets, checklists, and exercises.</p>
+        <a href="assets/author-visibility-manual.pdf" class="btn-primary" download>Download the Free Author Visibility Playbook</a>
+        <p style="margin-top: 12px; font-size: 13px; color: rgba(255,255,255,0.5);">Note: Place your PDF file at assets/author-visibility-manual.pdf to complete this download.</p>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <h4>Sophie Ellis Clark</h4>
+                <p>Book Discovery & Marketing Strategist</p>
+                <p><a href="mailto:sophie@sophieellisclark.com">sophie@sophieellisclark.com</a></p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="resources.html">Resources</a>
+                <a href="tools.html">Tools</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div>
+                <h4>Free Resources</h4>
+                <a href="manual.html">Author Visibility Manual</a>
+                <a href="resources.html">Resource Center</a>
+                <a href="tools.html">Book Visibility Score</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Sophie Ellis Clark. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            var nav = document.getElementById('mobileNav');
+            nav.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>

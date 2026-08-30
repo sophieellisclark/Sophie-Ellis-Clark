@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Sophie Ellis Clark | Book Discovery & Marketing Strategist</title>
+    <meta name="description" content="Learn about Sophie Ellis Clark, a Book Discovery & Marketing Strategist who helps authors get their books discovered by the right readers.">
+    <meta property="og:title" content="About Sophie Ellis Clark">
+    <meta property="og:description" content="Book Discovery & Marketing Strategist helping authors build visibility and discoverability.">
+    <meta property="og:type" content="website">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --navy: #1a2340;
+            --gold: #c9a96e;
+            --cream: #faf7f2;
+            --cream-dark: #f0ece6;
+            --charcoal: #2d2d2d;
+            --white: #ffffff;
+            --border: #e8e3de;
+        }
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.7;
+        }
+        h1, h2, h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--navy);
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-primary:hover {
+            background: #b8955a;
+        }
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--navy);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 2px solid var(--navy);
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+        .btn-secondary:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+        .nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo .name {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .nav-logo .subtitle {
+            font-size: 11px;
+            color: #777;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--charcoal);
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+        }
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--navy);
+            padding: 24px;
+            z-index: 999;
+            transform: translateY(-100%);
+            transition: transform 0.3s;
+        }
+        .mobile-nav.open {
+            transform: translateY(0);
+        }
+        .mobile-nav a {
+            color: var(--white);
+            display: block;
+            padding: 12px 0;
+            font-size: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .mobile-nav-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 28px;
+            cursor: pointer;
+            float: right;
+            margin-bottom: 16px;
+        }
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav-cta {
+                display: none;
+            }
+        }
+        .page-header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 100px 24px 60px;
+            text-align: center;
+        }
+        .page-header h1 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+        .page-header p {
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .about-main {
+            padding: 80px 24px;
+            background: var(--white);
+        }
+        .about-main-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .about-main h2 {
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
+        .about-main p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .about-philosophy {
+            padding: 80px 24px;
+            background: var(--cream);
+        }
+        .philosophy-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .philosophy-inner h2 {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .philosophy-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 32px 24px;
+            text-align: center;
+            border-top: 4px solid var(--gold);
+        }
+        .philosophy-card h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+        .philosophy-card p {
+            font-size: 14px;
+            color: #666;
+        }
+        @media (max-width: 700px) {
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .about-cta {
+            padding: 80px 24px;
+            background: var(--navy);
+            text-align: center;
+        }
+        .about-cta h2 {
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+        .about-cta p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 32px;
+        }
+        .footer {
+            background: #111827;
+            color: rgba(255,255,255,0.6);
+            padding: 48px 24px 24px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 32px;
+        }
+        .footer h4 {
+            color: var(--white);
+            font-family: Georgia, serif;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        .footer a {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .footer a:hover {
+            color: var(--gold);
+        }
+        .footer .copyright {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+        @media (max-width: 700px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <span class="name">Sophie Ellis Clark</span>
+                <span class="subtitle">Book Discovery & Marketing</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html" class="nav-cta">Get a Free Review</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Open menu" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" onclick="toggleMobileMenu()" aria-label="Close menu">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="results.html">Results</a>
+        <a href="resources.html">Resources</a>
+        <a href="tools.html">Tools</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" style="color: #c9a96e; font-weight: 700;">Get a Free Book Visibility Review</a>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>About Sophie Ellis Clark</h1>
+        <p>Book Discovery & Marketing Strategist</p>
+    </section>
+
+    <!-- About Main -->
+    <section class="about-main">
+        <div class="about-main-inner">
+            <h2>A Strategic Partner for Your Book's Visibility</h2>
+            <p>Sophie Ellis Clark is a Book Discovery & Marketing Strategist who helps authors navigate the complex world of book marketing and discoverability. Her work focuses on one central question: how do we make sure the right readers find your book?</p>
+            <p>With a deep understanding of the publishing landscape, reader behavior, and digital marketing, Sophie builds tailored strategies that help authors move beyond guesswork and into a clear, actionable plan for visibility.</p>
+            <p>Sophie's approach is grounded in education, strategy, and genuine care for authors and their work. She believes that every book deserves a chance to be discovered by the readers who will love it, and she works tirelessly to make that happen.</p>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="about-philosophy">
+        <div class="philosophy-inner">
+            <h2>What Sophie Believes</h2>
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <h3>Strategy First</h3>
+                    <p>Marketing should never be random. Every action should serve a purpose and align with a clear strategy.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>Education Over Hype</h3>
+                    <p>Authors deserve to understand the why behind the strategy, not just the what. Education empowers long-term success.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>Readers Are People</h3>
+                    <p>Marketing is not manipulation. It is about connecting the right book with the right reader in an authentic way.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+        <h2>Ready to Work Together?</h2>
+        <p>Let's start with a free Book Visibility Review to assess where your book stands today.</p>
+        <a href="contact.html" class="btn-primary">Request Your Free Review</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <h4>Sophie Ellis Clark</h4>
+                <p>Book Discovery & Marketing Strategist</p>
+                <p><a href="mailto:sophie@sophieellisclark.com">sophie@sophieellisclark.com</a></p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="resources.html">Resources</a>
+                <a href="tools.html">Tools</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div>
+                <h4>Free Resources</h4>
+                <a href="manual.html">Author Visibility Manual</a>
+                <a href="resources.html">Resource Center</a>
+                <a href="tools.html">Book Visibility Score</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Sophie Ellis Clark. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            var nav = document.getElementById('mobileNav');
+            nav.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
