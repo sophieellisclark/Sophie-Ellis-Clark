@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works | Sophie Ellis Clark | Book Discovery & Marketing Strategist</title>
+    <meta name="description" content="Learn how Sophie Ellis Clark helps authors improve book discoverability through a clear 5-step process: Book Review, Discovery Strategy, Campaign Planning, Promotion, and Reporting & Refinement.">
+    <meta property="og:title" content="How It Works | Sophie Ellis Clark">
+    <meta property="og:description" content="A clear 5-step process for book discovery and marketing.">
+    <meta property="og:type" content="website">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --navy: #1a2340;
+            --gold: #c9a96e;
+            --cream: #faf7f2;
+            --cream-dark: #f0ece6;
+            --charcoal: #2d2d2d;
+            --white: #ffffff;
+            --border: #e8e3de;
+        }
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.7;
+        }
+        h1, h2, h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--navy);
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-primary:hover {
+            background: #b8955a;
+        }
+        .nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo .name {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .nav-logo .subtitle {
+            font-size: 11px;
+            color: #777;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--charcoal);
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+        }
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--navy);
+            padding: 24px;
+            z-index: 999;
+            transform: translateY(-100%);
+            transition: transform 0.3s;
+        }
+        .mobile-nav.open {
+            transform: translateY(0);
+        }
+        .mobile-nav a {
+            color: var(--white);
+            display: block;
+            padding: 12px 0;
+            font-size: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .mobile-nav-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 28px;
+            cursor: pointer;
+            float: right;
+            margin-bottom: 16px;
+        }
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav-cta {
+                display: none;
+            }
+        }
+        .page-header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 100px 24px 60px;
+            text-align: center;
+        }
+        .page-header h1 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+        .page-header p {
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .process-steps {
+            padding: 80px 24px;
+            background: var(--white);
+        }
+        .process-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .process-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 24px;
+            padding: 32px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .process-step:last-child {
+            border-bottom: none;
+        }
+        .process-step .step-num {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+        .process-step h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        .process-step p {
+            color: #555;
+            font-size: 15px;
+        }
+        .process-step ul {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+        .process-step ul li {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 6px;
+        }
+        @media (max-width: 700px) {
+            .process-step {
+                grid-template-columns: 1fr;
+            }
+        }
+        .how-cta {
+            padding: 80px 24px;
+            background: var(--navy);
+            text-align: center;
+        }
+        .how-cta h2 {
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+        .how-cta p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 32px;
+        }
+        .footer {
+            background: #111827;
+            color: rgba(255,255,255,0.6);
+            padding: 48px 24px 24px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 32px;
+        }
+        .footer h4 {
+            color: var(--white);
+            font-family: Georgia, serif;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        .footer a {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .footer a:hover {
+            color: var(--gold);
+        }
+        .footer .copyright {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+        @media (max-width: 700px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <span class="name">Sophie Ellis Clark</span>
+                <span class="subtitle">Book Discovery & Marketing</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html" class="nav-cta">Get a Free Review</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Open menu" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" onclick="toggleMobileMenu()" aria-label="Close menu">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="results.html">Results</a>
+        <a href="resources.html">Resources</a>
+        <a href="tools.html">Tools</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" style="color: #c9a96e; font-weight: 700;">Get a Free Book Visibility Review</a>
+    </div>
+
+    <section class="page-header">
+        <h1>How It Works</h1>
+        <p>A clear, transparent process for book discovery and marketing.</p>
+    </section>
+
+    <section class="process-steps">
+        <div class="process-inner">
+            <div class="process-step">
+                <div class="step-num">01</div>
+                <div>
+                    <h2>Book Review</h2>
+                    <p>We start with a comprehensive review of your book's current market presence. This includes assessing your book page, positioning, reader engagement, and existing promotional efforts.</p>
+                    <ul>
+                        <li>Assessment of current visibility</li>
+                        <li>Review of your book page and metadata</li>
+                        <li>Evaluation of your author platform</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-num">02</div>
+                <div>
+                    <h2>Discovery Strategy</h2>
+                    <p>Based on the review, we build a tailored discovery strategy that addresses your book's specific strengths, weaknesses, and opportunities.</p>
+                    <ul>
+                        <li>Ideal reader definition</li>
+                        <li>Positioning refinement</li>
+                        <li>Channel prioritization</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-num">03</div>
+                <div>
+                    <h2>Campaign Planning</h2>
+                    <p>We develop a detailed campaign plan that maps out promotional activities, timelines, and resources. You'll know exactly what will happen and when.</p>
+                    <ul>
+                        <li>Promotional calendar</li>
+                        <li>Outreach list</li>
+                        <li>Content plan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-num">04</div>
+                <div>
+                    <h2>Promotion</h2>
+                    <p>We execute the plan across channels, engaging reader communities, book clubs, and content platforms to build visibility for your book.</p>
+                    <ul>
+                        <li>Reader community outreach</li>
+                        <li>Content distribution</li>
+                        <li>Campaign execution</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-num">05</div>
+                <div>
+                    <h2>Reporting & Refinement</h2>
+                    <p>We track performance and provide transparent reporting. This allows us to refine the strategy based on real data, not guesswork.</p>
+                    <ul>
+                        <li>Performance tracking</li>
+                        <li>Insight reports</li>
+                        <li>Strategy adjustments</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-cta">
+        <h2>Ready to Start?</h2>
+        <p>Let's begin with a free Book Visibility Review to assess where your book stands today.</p>
+        <a href="contact.html" class="btn-primary">Request Your Free Review</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <h4>Sophie Ellis Clark</h4>
+                <p>Book Discovery & Marketing Strategist</p>
+                <p><a href="mailto:sophie@sophieellisclark.com">sophie@sophieellisclark.com</a></p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="resources.html">Resources</a>
+                <a href="tools.html">Tools</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div>
+                <h4>Free Resources</h4>
+                <a href="manual.html">Author Visibility Manual</a>
+                <a href="resources.html">Resource Center</a>
+                <a href="tools.html">Book Visibility Score</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Sophie Ellis Clark. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            var nav = document.getElementById('mobileNav');
+            nav.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>

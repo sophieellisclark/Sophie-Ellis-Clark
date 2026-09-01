@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results & Case Studies | Sophie Ellis Clark | Book Discovery & Marketing Strategist</title>
+    <meta name="description" content="Explore how Sophie Ellis Clark helps authors improve book discoverability through strategic, reader-focused marketing. See real books and understand the discovery process.">
+    <meta property="og:title" content="Results & Case Studies | Sophie Ellis Clark">
+    <meta property="og:description" content="Real books. Different audiences. One focus: discovery. See how understanding a book's unique positioning shapes effective marketing.">
+    <meta property="og:type" content="website">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #1a2340;
+            --gold: #c9a96e;
+            --cream: #faf7f2;
+            --cream-dark: #f0ece6;
+            --charcoal: #2d2d2d;
+            --white: #ffffff;
+            --border: #e8e3de;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--navy);
+            line-height: 1.3;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #b8955a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--navy);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            border: 2px solid var(--navy);
+            transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-logo .name {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo .subtitle {
+            font-size: 11px;
+            color: #777;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--charcoal);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+        }
+
+        /* Mobile nav */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--navy);
+            padding: 24px;
+            z-index: 999;
+            transform: translateY(-100%);
+            transition: transform 0.3s;
+        }
+
+        .mobile-nav.open {
+            transform: translateY(0);
+        }
+
+        .mobile-nav a {
+            color: var(--white);
+            display: block;
+            padding: 12px 0;
+            font-size: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mobile-nav-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 28px;
+            cursor: pointer;
+            float: right;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav-cta {
+                display: none;
+            }
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 100px 24px 60px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: var(--white);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .page-header p {
+            color: rgba(255,255,255,0.85);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        /* Scroll Reveal */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Results Summary Section */
+        .results-summary {
+            padding: 80px 24px;
+            background: var(--white);
+        }
+
+        .results-summary-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .results-summary-inner h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 24px;
+        }
+
+        .results-summary-inner p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .results-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .results-highlight-card {
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            border-top: 4px solid var(--gold);
+        }
+
+        .results-highlight-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .results-highlight-card p {
+            font-size: 13px;
+            color: #666;
+        }
+
+        @media (max-width: 700px) {
+            .results-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Visual Results Strip */
+        .results-strip {
+            padding: 80px 24px;
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .results-strip-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .results-strip h2 {
+            color: var(--white);
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 48px;
+        }
+
+        .results-strip-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .results-strip-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 40px 32px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .results-strip-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+        }
+
+        .results-strip-card .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: var(--gold);
+        }
+
+        .results-strip-card h3 {
+            color: var(--white);
+            font-size: 22px;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+
+        .results-strip-card p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 700px) {
+            .results-strip-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Conversion Section */
+        .conversion-section {
+            padding: 80px 24px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .conversion-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .conversion-inner h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            margin-bottom: 24px;
+        }
+
+        .conversion-inner > p {
+            font-size: 17px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 48px;
+            line-height: 1.8;
+        }
+
+        .conversion-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .conversion-step {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: center;
+            border-top: 4px solid var(--gold);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .conversion-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .conversion-step .step-num {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .conversion-step h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .conversion-step p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .conversion-ctas {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 700px) {
+            .conversion-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Author Privacy & Reference Policy */
+        .privacy-policy {
+            padding: 60px 24px;
+            background: var(--cream);
+        }
+
+        .privacy-policy-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 48px;
+            border-left: 5px solid var(--gold);
+            text-align: center;
+        }
+
+        .privacy-policy .icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+            color: var(--gold);
+        }
+
+        .privacy-policy h2 {
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .privacy-policy p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .privacy-policy .verification-box {
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+            text-align: left;
+        }
+
+        .privacy-policy .verification-box h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .privacy-policy .verification-box p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .privacy-policy .verification-cta {
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 700px) {
+            .privacy-policy-inner {
+                padding: 32px 20px;
+            }
+            .privacy-policy .verification-box {
+                padding: 16px;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: #111827;
+            color: rgba(255,255,255,0.6);
+            padding: 48px 24px 24px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 32px;
+        }
+
+        .footer h4 {
+            color: var(--white);
+            font-family: Georgia, serif;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 6px;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: var(--gold);
+        }
+
+        .footer .copyright {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility: Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <span class="name">Sophie Ellis Clark</span>
+                <span class="subtitle">Book Discovery & Marketing</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html" class="nav-cta">Get a Free Review</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Open menu" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" onclick="toggleMobileMenu()" aria-label="Close menu">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="results.html">Results</a>
+        <a href="resources.html">Resources</a>
+        <a href="tools.html">Tools</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" style="color: #c9a96e; font-weight: 700;">Get a Free Book Visibility Review</a>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Real Books. Different Audiences. One Focus: Discovery.</h1>
+        <p>Every book has its own audience, story, positioning and discovery opportunities. Effective marketing begins with understanding those differences.</p>
+    </section>
+
+    <!-- Results Summary -->
+    <section class="results-summary reveal-section">
+        <div class="results-summary-inner">
+            <h2>Results Are Built on Strategy, Not Luck</h2>
+            <p>I work with authors across genres to improve discoverability and reader engagement. My approach is tailored to each book's unique positioning, audience, and goals. I do not rely on generic tactics or guaranteed outcomes; instead, I build strategies that make your book visible to the readers most likely to love it.</p>
+            <p>Whether your book is a romance, a children's adventure, a memoir, or a thriller, the principles of discovery remain the same: understand the book, identify the readers, and find the channels where they gather.</p>
+
+            <div class="results-highlights">
+                <div class="results-highlight-card">
+                    <h3>Reader-Centered</h3>
+                    <p>I focus on connecting your book with the readers who are already looking for what you wrote.</p>
+                </div>
+                <div class="results-highlight-card">
+                    <h3>Genre-Aware</h3>
+                    <p>Each genre has its own communities, tropes, and discovery channels. I leverage these to your advantage.</p>
+                </div>
+                <div class="results-highlight-card">
+                    <h3>Strategic & Transparent</h3>
+                    <p>My process is clear and measurable. You'll know exactly what I'm doing and why.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Results Strip -->
+    <section class="results-strip reveal-section">
+        <div class="results-strip-inner">
+            <h2>The Discovery Framework</h2>
+            <div class="results-strip-grid">
+                <div class="results-strip-card">
+                    <div class="icon">&#128214;</div>
+                    <h3>BOOK</h3>
+                    <p>Understand what makes the book distinctive. Every story has unique hooks, themes, and emotional core.</p>
+                </div>
+                <div class="results-strip-card">
+                    <div class="icon">&#128101;</div>
+                    <h3>READERS</h3>
+                    <p>Identify who is most likely to connect with it. Different books attract different readers, and that matters.</p>
+                </div>
+                <div class="results-strip-card">
+                    <div class="icon">&#128269;</div>
+                    <h3>DISCOVERY</h3>
+                    <p>Find the channels and communities where those readers can encounter it. Visibility starts with knowing where to look.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conversion Section -->
+    <section class="conversion-section reveal-section">
+        <div class="conversion-inner">
+            <h2>Your Book Has Its Own Discovery Story.</h2>
+            <p>Your book is unique. Your readers, genre, positioning and opportunities are different. That is why effective book marketing should begin with understanding the book itself.</p>
+            <div class="conversion-steps">
+                <div class="conversion-step">
+                    <div class="step-num">01</div>
+                    <h3>Understand Your Book</h3>
+                    <p>We start by exploring what makes your book unique and who it is really for.</p>
+                </div>
+                <div class="conversion-step">
+                    <div class="step-num">02</div>
+                    <h3>Identify Your Readers</h3>
+                    <p>We determine the specific reader communities and audiences most likely to love your book.</p>
+                </div>
+                <div class="conversion-step">
+                    <div class="step-num">03</div>
+                    <h3>Build Your Discovery Strategy</h3>
+                    <p>We create a plan to make your book visible to those readers through the right channels and messaging.</p>
+                </div>
+            </div>
+            <div class="conversion-ctas">
+                <a href="contact.html" class="btn-primary">Request a Book Visibility Review</a>
+                <a href="contact.html" class="btn-secondary">Tell Me About Your Book</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Privacy & Reference Policy -->
+    <section class="privacy-policy reveal-section">
+        <div class="privacy-policy-inner">
+            <div class="icon">&#128274;</div>
+            <h2>Author Privacy & Reference Policy</h2>
+            <p>Your trust matters to me. So does the privacy of the authors I work with.</p>
+            <p>I respect and protect the privacy of every author I work with. I do not publicly publish private author contact information, personal correspondence, or identifiable references simply for the purpose of proving my work.</p>
+            <p>Protecting this information also helps reduce the risk of unsolicited outreach, impersonation, fake requests, misuse of an author's name, and other forms of unwanted contact.</p>
+            <p>I believe professional results should be presented responsibly, without compromising the privacy of the people behind those results.</p>
+
+            <div class="verification-box">
+                <h3>Want to verify a result or request a reference?</h3>
+                <p>I completely understand that you may want additional reassurance before working with me. If you would like to verify a particular result, collaboration, or reference, please contact me directly.</p>
+                <p>Where appropriate, I can explain the available verification process and, with the necessary permission, facilitate an introduction to a relevant reference.</p>
+                <p>Please do not attempt to locate or contact authors independently using private information. Contact me first, and I will handle any appropriate introduction respectfully.</p>
+            </div>
+
+            <div class="verification-cta">
+                <p style="margin-bottom: 12px;">Interested in verifying my work?</p>
+                <p style="margin-bottom: 24px;">Contact me directly and I'll be happy to discuss the appropriate verification process.</p>
+                <a href="contact.html" class="btn-primary">Contact Me for Verification</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <h4>Sophie Ellis Clark</h4>
+                <p>Book Discovery & Marketing Strategist</p>
+                <p><a href="mailto:sophie@sophieellisclark.com">sophie@sophieellisclark.com</a></p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="resources.html">Resources</a>
+                <a href="tools.html">Tools</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div>
+                <h4>Free Resources</h4>
+                <a href="manual.html">Author Visibility Manual</a>
+                <a href="resources.html">Resource Center</a>
+                <a href="tools.html">Book Visibility Score</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Sophie Ellis Clark. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            var nav = document.getElementById('mobileNav');
+            nav.classList.toggle('open');
+        }
+
+        // Scroll reveal using IntersectionObserver
+        document.addEventListener('DOMContentLoaded', function() {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Select all sections that have the reveal-section class
+            var revealSections = document.querySelectorAll('.reveal-section');
+            revealSections.forEach(function(section) {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
